@@ -13,6 +13,7 @@ const pool = require("../config/database");
  * @param {Function} callback
  * @returns {Promise<any>}
  */
+
 async function withTransaction(callback) {
   const client = await pool.connect();
 

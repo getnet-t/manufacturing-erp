@@ -10,6 +10,15 @@ const roleRoutes = require("./routes/roleRoutes");
 const permissionRoutes = require("./routes/permissionRoutes");
 const companyRoutes = require("./routes/companyRoutes");
 const factoryRoutes = require("./routes/factoryRoutes");
+const unitOfMeasureRoutes = require("./routes/unitOfMeasureRoutes");
+const productRoutes = require("./routes/productRoutes");
+const productCategoryRoutes = require("./routes/productCategoryRoutes");
+const inventoryRoutes = require("./routes/inventoryRoutes");
+
+const bomRoutes = require("./routes/bomRoutes");
+const productionRoutes = require("./routes/productionRoutes");
+const qualityRoutes = require("./routes/qualityRoutes");
+
 
 app.use(helmet());
 
@@ -32,10 +41,20 @@ app.get("/api/health", (req, res) => {
     timestamp: new Date().toISOString(),
   });
 });
+
+
 app.use("/api/auth", authRoutes);
 app.use("/api/users", userRoutes);
 app.use("/api/roles", roleRoutes);
 app.use("/api/permissions", permissionRoutes);
 app.use("/api/companies", companyRoutes);
 app.use("/api/factories", factoryRoutes);
+app.use("/api/uom", unitOfMeasureRoutes);
+app.use("/api/products", productRoutes);
+app.use("/api/product-categories", productCategoryRoutes);
+app.use("/api/inventory", inventoryRoutes);
+
+app.use("/api/boms", bomRoutes);
+app.use("/api/production-orders", productionRoutes);
+app.use("/api/quality", qualityRoutes);
 module.exports = app;

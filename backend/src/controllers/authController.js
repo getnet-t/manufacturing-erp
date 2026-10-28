@@ -80,3 +80,7 @@ module.exports = {
   "email": "production.manager@erp.local",
   "password": "123abc"
 }*/
+/*{
+  "email": "manager.test@erp.local",
+  "password": "Manager@123"
+}*/

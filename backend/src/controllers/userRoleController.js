@@ -41,15 +41,12 @@ async function getRolesForUser(req, res) {
 async function updateUserRoles(req, res) {
   try {
     const userId = Number(req.params.id);
-
     const { roleIds } = req.body;
-
     const roles = await assignRolesToUser({
       userId,
       companyId: req.user.companyId,
       roleIds,
     });
-
     res.json({
       success: true,
       message: "User roles updated successfully",
@@ -62,7 +59,6 @@ async function updateUserRoles(req, res) {
       "Update user roles error:",
       error
     );
-
     if (
       error.message === "User not found" ||
       error.message.startsWith("Role ")
